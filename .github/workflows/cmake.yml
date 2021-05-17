@@ -22,22 +22,22 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Configure CMake
-      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
-      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-        cd ../EP03
-        git submodule add https://github.com/glfw/glfw.git external/glfw
-        submodule update --init --recursive
-        cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
-
+        
     - name: Build
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/
         cmake --build ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/build --config ${{env.BUILD_TYPE}}
-        cd ../EP03
-        git submodule add https://github.com/glfw/glfw.git external/glfw
-        submodule update --init --recursive
+        
+    - name: Configure CMake
+      run: |
+        cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
+        cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
+    
+    - name: Build
+      run: |
+        cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
 
