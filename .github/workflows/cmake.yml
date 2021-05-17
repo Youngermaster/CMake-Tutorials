@@ -34,10 +34,14 @@ jobs:
     - name: Configure CMake EP03
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
+        git submodule add https://github.com/glfw/glfw.git external/glfw
+        submodule update --init --recursive
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
     
     - name: Build EP03
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
+        git submodule add https://github.com/glfw/glfw.git external/glfw
+        submodule update --init --recursive
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
 
