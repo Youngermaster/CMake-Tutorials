@@ -2,10 +2,12 @@ cmake_minimum_required(VERSION 3.8)
 
 project(OLAS VERSION 1.0)
 
-configure_file(OLASConfig.h.in OLASConfig.h)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR})
+
+configure_file(OLASConfig.h.in OLASConfig.h)
 
 #           DOWNLOAD ALL THE SUBMODULES
 find_package(Git QUIET)
