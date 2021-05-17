@@ -18,7 +18,7 @@ int main(int argc, char const* argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    window = glfwCreateWindow(300, 300, "Gears", NULL, NULL);
+    window = glfwCreateWindow(400, 400, "Gears EP04", NULL, NULL);
     if (!window) {
         fprintf(stderr, "Failed to open GLFW window\n");
         glfwTerminate();
