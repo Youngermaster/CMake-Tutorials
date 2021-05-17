@@ -34,11 +34,13 @@ jobs:
     - name: Configure CMake EP03
       run: |
         sudo apt-get install xorg-dev libglu1-mesa-dev -y
+        git submodule update --init --recursive
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF
     
     - name: Build EP03
       run: |
+        git submodule update --init --recursive
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF
 
