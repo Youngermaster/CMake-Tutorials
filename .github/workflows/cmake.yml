@@ -43,4 +43,3 @@ jobs:
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
         git submodule update --init --recursive
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF
-

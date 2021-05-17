@@ -22,7 +22,7 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
 endif()
 
 #           CHECK ALL THE SUBMODULES
-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/Code-Tech-and-Tutorials/EP03/external/glfw/CMakeLists.txt")
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/external/glfw/CMakeLists.txt")
     message(FATAL_ERROR "The glfw submodules was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
 
