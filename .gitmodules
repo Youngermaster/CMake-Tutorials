@@ -1,0 +1,3 @@
+[submodule "Code-Tech-and-Tutorials/EP03/external/glfw"]
+	path = Code-Tech-and-Tutorials/EP03/external/glfw
+	url = https://github.com/glfw/glfw.git
