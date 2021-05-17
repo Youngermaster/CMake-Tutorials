@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.8)
 
-project(OLAS)
+project(OLAS VERSION 1.0)
+
+configure_file(OLASConfig.h.in OLASConfig.h)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
@@ -22,7 +24,7 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
 endif()
 
 #           CHECK ALL THE SUBMODULES
-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/Code-Tech-and-Tutorials/EP03/external/glfw/CMakeLists.txt")
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/external/glfw/CMakeLists.txt")
     message(FATAL_ERROR "The glfw submodules was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
 
