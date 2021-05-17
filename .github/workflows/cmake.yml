@@ -21,22 +21,22 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Configure CMake
+    - name: Configure CMake Ep10
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
         
-    - name: Build
+    - name: Build Ep10
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/
         cmake --build ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/build --config ${{env.BUILD_TYPE}}
         
-    - name: Configure CMake
+    - name: Configure CMake EP03
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
     
-    - name: Build
+    - name: Build EP03
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
