@@ -28,12 +28,14 @@ jobs:
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/
         cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
         cd ../EP03
-        cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF
+        submodule update --init --recursive
+        cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
 
     - name: Build
       run: |
         cd ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/
         cmake --build ${{github.workspace}}/Code-Tech-and-Tutorials/Ep10/build --config ${{env.BUILD_TYPE}}
         cd ../EP03
-        cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF
+        submodule update --init --recursive
+        cmake -B ${{github.workspace}}/Code-Tech-and-Tutorials/EP03/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DGLFW_BUILD_DOCS=OFF-DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF
 
